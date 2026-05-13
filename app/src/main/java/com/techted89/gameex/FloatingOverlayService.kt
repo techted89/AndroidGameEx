@@ -219,7 +219,9 @@ class FloatingOverlayService : Service() {
         // Editor/Script Mode setup omitted for brevity...
         val rvModulesList = viewEditor.findViewById<RecyclerView>(R.id.rv_modules_list)
         rvModulesList.layoutManager = LinearLayoutManager(this)
+        @Suppress("UNUSED_VARIABLE")
         val etScriptInput = viewScript.findViewById<EditText>(R.id.et_script_input)
+        @Suppress("UNUSED_VARIABLE")
         val tvScriptOutput = viewScript.findViewById<android.widget.TextView>(R.id.tv_script_output)
 
         // Initial State
