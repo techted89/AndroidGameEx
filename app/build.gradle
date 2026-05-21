@@ -7,6 +7,10 @@ android {
     namespace 'com.techted89.gameex'
     compileSdk 34
 
+    packagingOptions {
+        jniLibs.useLegacyPackaging = true
+    }
+
     defaultConfig {
         applicationId "com.techted89.gameex"
         minSdk 26 // Android 8.0+ required for modern process handling
