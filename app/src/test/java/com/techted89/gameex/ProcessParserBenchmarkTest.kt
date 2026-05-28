@@ -20,6 +20,7 @@ class ProcessParserBenchmarkTest {
         // We can't easily warm up RootUtils without affecting static state (none here)
         // But let's warm up JVM a bit with dummy loops
         repeat(100) {
+            @Suppress("UNUSED_VARIABLE")
             val parts = psOutputLine.trim().split("\\s+".toRegex())
         }
 

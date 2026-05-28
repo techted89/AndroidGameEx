@@ -38,6 +38,7 @@ object GameGuardianAPI {
      * Searches for a value with the specified type and flags.
      * Mapped to NativeScanner.searchMemoryString.
      */
+    @Suppress("UNUSED_PARAMETER")
     fun searchNumber(text: String, type: Int, encrypted: Boolean, sign: Int, memoryFrom: Long, memoryTo: Long) {
         // Construct query string based on parameters if needed
         // For now, we pass the raw text which might contain ranges etc.
@@ -47,6 +48,7 @@ object GameGuardianAPI {
     /**
      * Refines the search results.
      */
+    @Suppress("UNUSED_PARAMETER")
     fun refineNumber(text: String, type: Int) {
         val intVal = text.toIntOrNull() ?: 0
         NativeScanner.filterMemory(targetPid, intVal)
@@ -63,14 +65,17 @@ object GameGuardianAPI {
     /**
      * Edits all found results to the specified value.
      */
+    @Suppress("UNUSED_PARAMETER")
     fun editAll(text: String, type: Int) {
         // NativeScanner.writeMemoryLoop(...)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun dumpMemory(from: Long, to: Long, dir: String, flags: Int? = null): Boolean {
         return NativeScanner.dumpMemory(targetPid, from, to, dir)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun copyText(text: String, fixLocale: Boolean = true) {
         contextRef?.get()?.let { SystemUtils.copyText(it, text) }
     }
@@ -83,6 +88,7 @@ object GameGuardianAPI {
         return SystemUtils.getTargetPackage(targetPid)
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun searchPointer(maxOffset: Int, memoryFrom: Long = 0, memoryTo: Long = -1, limit: Long = 0) {
         // NativeScanner.searchPointer(...)
     }
@@ -95,10 +101,12 @@ object GameGuardianAPI {
         // Clear global results
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun toast(text: String, fast: Boolean = false) {
         // Callback to UI needed
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun alert(text: String, positive: String = "ok", negative: String? = null, neutral: String? = null): Int {
         // Blocking dialog logic stub
         return 1
@@ -116,6 +124,7 @@ object GameGuardianAPI {
         return true // Mock state
     }
 
+    @Suppress("UNUSED_PARAMETER")
     fun setVisible(visible: Boolean) {
         // UI toggle callback needed
     }
