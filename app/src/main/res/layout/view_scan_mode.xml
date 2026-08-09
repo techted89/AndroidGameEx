@@ -32,8 +32,8 @@
             android:layout_weight="1"/>
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_search_value"
+    <RadioGroup
+        android:id="@+id/rg_scan_mode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -175,6 +175,9 @@
                     android:text="Java Heap"
                     android:textColor="#FFFFFF"
                     android:buttonTint="@color/primary_hacker_green"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_fuzzy_controls"
@@ -222,33 +225,6 @@
                 android:layout_weight="1"
                 android:text="Decreased"
                 android:textSize="10sp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:id="@+id/btn_fuzzy_increased"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Increased"
-                android:textSize="12sp"
-                android:layout_marginEnd="4dp"/>
-
-            <Button
-                android:id="@+id/btn_fuzzy_decreased"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Decreased"
-                android:textSize="12sp"
-                android:layout_marginStart="4dp"/>
         </LinearLayout>
     </LinearLayout>
 
