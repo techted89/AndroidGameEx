@@ -32,8 +32,8 @@
             android:layout_weight="1"/>
     </RadioGroup>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_search_value"
+    <RadioGroup
+        android:id="@+id/rg_scan_mode"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -65,6 +65,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_search_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/hint_search_value"
@@ -175,6 +176,8 @@
                     android:text="Java Heap"
                     android:textColor="#FFFFFF"
                     android:buttonTint="@color/primary_hacker_green"/>
+            </LinearLayout>
+        </HorizontalScrollView>
 
     <LinearLayout
         android:id="@+id/layout_fuzzy_controls"
