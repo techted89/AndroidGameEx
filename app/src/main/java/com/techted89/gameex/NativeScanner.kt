@@ -18,7 +18,8 @@ object NativeScanner {
         System.loadLibrary("native-scanner")
     }
 
-    // Supported Data Types
+    // Supported Data Types (Legacy/Duplicates commented out)
+    /* [LEGACY/UNUSED]
     const val TYPE_BYTE = 1
     const val TYPE_WORD = 2
     const val TYPE_DWORD = 4
@@ -33,6 +34,8 @@ object NativeScanner {
     const val FUZZY_UNCHANGED = 1
     const val FUZZY_INCREASED = 2
     const val FUZZY_DECREASED = 3
+    */
+    const val TYPE_AUTO = 128 // Added to avoid conflicts with existing TYPE_* constants
 
     /**
  * Read a sequence of bytes from the memory of a target process.
@@ -79,45 +82,15 @@ object NativeScanner {
      */
     external fun filterFuzzy(pid: Int, mode: Int): Int
 
-    /**
-     * Filters the current search results, keeping only those that match the new value.
-     *
-     * @param pid The target process identifier (PID).
-     * @param address The starting absolute memory address in the target process to read from.
-     * @param size The number of bytes to read.
-     * @return A byte array containing the bytes read; its length will be equal to `size` when the read succeeds.
-     */
+    /* [LEGACY/UNUSED]
     external fun readMemory(pid: Int, address: Long, size: Int): ByteArray
-
-    /**
-     * Searches memory using a query string (e.g., "100~200" for range, "100X8" for XOR) and specified type.
-     */
     external fun searchMemory(pid: Int, query: String, type: Int): Int
-
-    /**
-     * Filters the current search results using a query string and specified type.
-     */
     external fun filterMemory(pid: Int, query: String, type: Int): Int
-
-    /**
-     * Starts a fuzzy scan by capturing current memory snapshot.
-     */
     external fun startFuzzyScan(pid: Int, type: Int)
-
-    /**
-     * Filters the fuzzy scan results.
-     */
     external fun filterFuzzy(pid: Int, mode: Int, type: Int): Int
-
-    /**
-     * Filters memory with a specific data type.
-     */
     external fun filterMemory(pid: Int, valueStr: String, type: Int): Int
-
-    /**
-     * Filters memory with a specific data type.
-     */
     external fun filterMemory(pid: Int, valueStr: String, type: Int): Int
+    */
 
     /**
      * Retrieves a list of loaded modules (libraries) in the target process.

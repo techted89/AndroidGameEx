@@ -59,7 +59,6 @@ class FloatingOverlayService : Service() {
 
         createNotificationChannel()
 
-        /* [LEGACY/UNUSED]
         // Ensure we run as Foreground to prevent killing
         val notification = NotificationCompat.Builder(this, "overlay_channel")
             .setContentTitle("Memory Editor Active")
@@ -73,6 +72,7 @@ class FloatingOverlayService : Service() {
         } else {
             startForeground(1, notification)
         }
+        /* [LEGACY/UNUSED] */
 
         return START_NOT_STICKY
     }
