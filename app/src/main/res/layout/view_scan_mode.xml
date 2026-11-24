@@ -20,7 +20,7 @@
             android:text="Exact"
             android:textColor="#FFFFFF"
             android:buttonTint="@color/primary_hacker_green"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <RadioButton
             android:id="@+id/rb_fuzzy"
@@ -29,55 +29,31 @@
             android:text="Fuzzy"
             android:textColor="#FFFFFF"
             android:buttonTint="@color/primary_hacker_green"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
     </RadioGroup>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_search_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:hint="@string/hint_search_value"
+        app:helperText="@string/helper_search_value"
+        app:endIconMode="clear_text">
 
-        <RadioButton
-            android:id="@+id/rb_scan_exact"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_search_value"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Exact Search"
-            android:textColor="#FFFFFF"
-            android:checked="true"
-            android:buttonTint="@color/primary_hacker_green"/>
-
-        <RadioButton
-            android:id="@+id/rb_scan_fuzzy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fuzzy Search"
-            android:textColor="#FFFFFF"
-            android:buttonTint="@color/primary_hacker_green"
-            android:layout_marginStart="16dp"/>
-    </RadioGroup>
+            android:inputType="numberSigned"
+            android:imeOptions="actionSearch"
+            android:textColor="#FFFFFF" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:id="@+id/layout_exact_options"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_search_value"
-            app:helperText="@string/helper_search_value"
-            app:endIconMode="clear_text">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_search_value"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="numberSigned"
-                android:imeOptions="actionSearch"
-                android:textColor="#FFFFFF"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -100,7 +76,7 @@
                     android:text="Dword"
                     android:checked="true"
                     android:textColor="@color/white"
-                    app:chipBackgroundColor="@color/surface_card_grey"/>
+                    app:chipBackgroundColor="@color/surface_card_grey" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_type_float"
@@ -109,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:text="Float"
                     android:textColor="@color/white"
-                    app:chipBackgroundColor="@color/surface_card_grey"/>
+                    app:chipBackgroundColor="@color/surface_card_grey" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_type_double"
@@ -118,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:text="Double"
                     android:textColor="@color/white"
-                    app:chipBackgroundColor="@color/surface_card_grey"/>
+                    app:chipBackgroundColor="@color/surface_card_grey" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_type_byte"
@@ -127,8 +103,7 @@
                     android:layout_height="wrap_content"
                     android:text="Byte"
                     android:textColor="@color/white"
-                    app:chipBackgroundColor="@color/surface_card_grey"/>
-
+                    app:chipBackgroundColor="@color/surface_card_grey" />
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
@@ -138,7 +113,7 @@
             android:text="Memory Ranges:"
             android:textColor="@color/primary_hacker_green"
             android:textSize="12sp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp" />
 
         <HorizontalScrollView
             android:layout_width="match_parent"
@@ -157,7 +132,7 @@
                     android:text="Anon"
                     android:textColor="#FFFFFF"
                     android:checked="true"
-                    android:buttonTint="@color/primary_hacker_green"/>
+                    android:buttonTint="@color/primary_hacker_green" />
 
                 <CheckBox
                     android:id="@+id/cb_region_c_heap"
@@ -166,7 +141,7 @@
                     android:text="C++ Heap"
                     android:textColor="#FFFFFF"
                     android:checked="true"
-                    android:buttonTint="@color/primary_hacker_green"/>
+                    android:buttonTint="@color/primary_hacker_green" />
 
                 <CheckBox
                     android:id="@+id/cb_region_java_heap"
@@ -174,7 +149,10 @@
                     android:layout_height="wrap_content"
                     android:text="Java Heap"
                     android:textColor="#FFFFFF"
-                    android:buttonTint="@color/primary_hacker_green"/>
+                    android:buttonTint="@color/primary_hacker_green" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_fuzzy_controls"
@@ -188,49 +166,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <Button
                 android:id="@+id/btn_fuzzy_changed"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Changed"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
+
             <Button
                 android:id="@+id/btn_fuzzy_unchanged"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Unchanged"
-                android:textSize="10sp"/>
+                android:textSize="10sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <Button
-                android:id="@+id/btn_fuzzy_increased"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Increased"
-                android:textSize="10sp"/>
-            <Button
-                android:id="@+id/btn_fuzzy_decreased"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Decreased"
-                android:textSize="10sp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2"
-            android:layout_marginTop="8dp">
 
             <Button
                 android:id="@+id/btn_fuzzy_increased"
@@ -238,8 +195,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Increased"
-                android:textSize="12sp"
-                android:layout_marginEnd="4dp"/>
+                android:textSize="10sp" />
 
             <Button
                 android:id="@+id/btn_fuzzy_decreased"
@@ -247,8 +203,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Decreased"
-                android:textSize="12sp"
-                android:layout_marginStart="4dp"/>
+                android:textSize="10sp" />
         </LinearLayout>
     </LinearLayout>
 
@@ -258,6 +213,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:visibility="gone"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
